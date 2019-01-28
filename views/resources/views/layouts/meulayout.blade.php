@@ -7,15 +7,17 @@
     <!--<link rel="stylesheet" href="{{URL::to('css/app.css')}}">-->
   </head>
   <body>
-    @alert(['tipo'=>'danger', 'titulo'=>'Erro fatal'])
-      <strong>Erro: </strong> Sua mensagem de erro.
-    @endalert
-    @alert(['tipo'=>'primary', 'titulo'=>'Erro fatal'])
-      <strong>Erro: </strong> Sua mensagem de erro.
-    @endalert
-    @alert(['tipo'=>'success', 'titulo'=>'Erro fatal'])
-      <strong>Erro: </strong> Sua mensagem de erro.
-    @endalert
+    @hasSection('minha-secao-produtos')
+    <div class="card"style="width:500px; margin-top:10px;">
+      <div class="card-body">
+          <h5 class="card-title">Produtos</h5>
+          <p class="card-text">@yield('minha-secao-produtos')</p>
+          <a href="#" class="card-link">Informações</a>
+          <a href="#" class="card-link">Ajuda</a>
+      </div>
+    </div>
+    @endif
+
     <!--<script type="text/javascript" src="{{asset('js/app.js')}}">
     </script>-->
     <script type="text/javascript" src="{{URL::to('js/app.js')}}">
